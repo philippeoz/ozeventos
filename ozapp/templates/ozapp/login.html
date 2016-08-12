@@ -1,0 +1,44 @@
+{% extends "ozapp/template.html" %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_title %}
+<title>Login</title>
+{% endblock %}
+
+{% block bootstrap3_content %}
+	<!-- <link rel="stylesheet" type="text/css" href="https://getbootstrap.com/examples/signin/signin.css"> -->
+	<div class="row">
+
+	<div class="container col-xs-4 text-center centred "> 
+		<div class="login_form">
+			<h2>Login</h2>
+            {% csrf_token %}
+		    <form id="formlogin" method="POST" class="form-signin">
+		    		<div class="col-xs-12">
+		    	    	<div class="defautbtnTam multifield">
+		    	    		<input type='hidden' name='csrfmiddlewaretoken' value='89QBNjBKD64kNCYkMFVZGk7AIrxfMKIV' />
+		            		<input id="id_username" maxlength="254" name="username" type="text" class="form-control" placeholder="Nome de Usuário">
+		            	</div> <!--Encerra div do usuario-->
+		            	<div class="defautbtnTam multifield">
+		    	    		<input type='hidden' name='csrfmiddlewaretoken' value='89QBNjBKD64kNCYkMFVZGk7AIrxfMKIV' />
+		            		<input id="id_password" name="password" type="password" class="form-control" placeholder="Senha">
+		            	</div> <!-- Encerra div da senha -->
+	<!-- 	<input type='hidden' name='csrfmiddlewaretoken' value='89QBNjBKD64kNCYkMFVZGk7AIrxfMKIV' />
+		    	<p><label for="id_username">Usuário:</label> <input id="id_username" maxlength="254" name="username" type="text" /></p>
+<p><label for="id_password">Senha:</label> <input id="id_password" name="password" type="password" /></p> -->
+		    		<div class="defautbtnTam multifield">
+		    			<input type="submit" value="Entrar" class="form-control">
+		    		</div>	
+		    		</div> <!--Encerra div da caixinha de login-->
+		        	 
+		        	 <h5>Não está cadastrado?<b><a href="/cadastrar/">Cadastre-se</a> aqui!</b></h5>
+		    		<!-- Encerra div botao Entrar -->   	
+<!-- {#		    	{% csrf_token %}#}
+{#		    	{{ form.as_p }}#} -->
+		    </form> <!-- Encerra form-signin -->	   
+		 </div> <!--Encerra class -->	
+	</div><!-- Encerra container-->
+	</div><!-- Encerra row-->
+
+{% endblock %}
